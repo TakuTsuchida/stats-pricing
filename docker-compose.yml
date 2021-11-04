@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  front:
+    container_name: stats-pricing-front
+    build:
+      context: .
+      dockerfile: docker_files/front/Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./front:/front
+    command: "ng serve --host 0.0.0.0"
+    tty: true
